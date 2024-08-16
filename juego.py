@@ -35,12 +35,13 @@ def main():
             player_y -= PLAYER_SPEED
         if keys[pygame.K_DOWN]:
             player_y += PLAYER_SPEED
+        
 
         # Actualizar balas
         bullets = [move_bullet(bullet) for bullet in bullets]
 
         # Actualizar enemigos
-        enemies = [move_enemy(enemy, player_x, player_y) for enemy in enemies]
+        enemies = [move_enemy(enemy, player_x, player_y, ENEMY_SPEED) for enemy in enemies]
 
         # Dibujar todo
         window.fill((0, 0, 0))  # Pintar la pantalla de negro
